@@ -1,0 +1,56 @@
+{
+  "name": "AgendaServidor",
+  "fields": [
+    {
+      "fieldName": "mes",
+      "fieldType": "Mes",
+      "fieldValues": "Janeiro,Fevereiro,Marco,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro"
+    },
+    {
+      "fieldName": "horario",
+      "fieldType": "Horario",
+      "fieldValues": "H8,H9,H10,H11,H12,H13,H14,H15,H16,H17,H18H,H19,H20,H21,H22"
+    },
+    {
+      "fieldName": "diaMes",
+      "fieldType": "DiaMes",
+      "fieldValues": "D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18,D19,D20,D21,D22,D23,D24,D25,D26,D27,D28,D29,D30,D31"
+    },
+    {
+      "fieldName": "diaSemana",
+      "fieldType": "DiaSemana",
+      "fieldValues": "Segunda_feira,Terca_feira,Quarta_feira,Quinta_feira,Sexta_feira"
+    },
+    {
+      "fieldName": "statusDia",
+      "fieldType": "StatusDia",
+      "fieldValues": "Disponivel,Indisponivel"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "agendaAtendimentoServidor",
+      "otherEntityRelationshipName": "agendaServidor",
+      "relationshipName": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "servidor",
+      "otherEntityRelationshipName": "id",
+      "relationshipName": "servidor",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200810000342",
+  "entityTableName": "agenda_servidor",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

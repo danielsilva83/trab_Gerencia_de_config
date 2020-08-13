@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-aluno-heading">Create or edit a Aluno</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_raAluno">Ra Aluno</label>
+                    <input type="number" class="form-control" name="raAluno" id="field_raAluno"
+                           formControlName="raAluno"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nomeAluno">Nome Aluno</label>
+                    <input type="text" class="form-control" name="nomeAluno" id="field_nomeAluno"
+                           formControlName="nomeAluno"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_periodo">Periodo</label>
+                    <input type="number" class="form-control" name="periodo" id="field_periodo"
+                           formControlName="periodo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_curso">Curso</label>
+                    <select class="form-control" name="curso" formControlName="curso" id="field_curso">
+                        <option value="Engenharia_Eletrica">Engenharia_Eletrica</option>
+                        <option value="Engenharia_Computacao">Engenharia_Computacao</option>
+                        <option value="Engenharia_Eletronica">Engenharia_Eletronica</option>
+                        <option value="Engenharia_Mecanica">Engenharia_Mecanica</option>
+                        <option value="Engenharia_Controle_Automacao">Engenharia_Controle_Automacao</option>
+                        <option value="Engenharia_Software">Engenharia_Software</option>
+                        <option value="Analise_Desenvolvimento_Sistemas">Analise_Desenvolvimento_Sistemas</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

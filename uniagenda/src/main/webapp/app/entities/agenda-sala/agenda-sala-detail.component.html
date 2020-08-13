@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="agendaSala">
+            <h2><span>Agenda Sala</span> {{ agendaSala.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{ agendaSala.status }}</span>
+                </dd>
+                <dt><span>Horario</span></dt>
+                <dd>
+                    <span>{{ agendaSala.horario }}</span>
+                </dd>
+                <dt><span>Dia Mes</span></dt>
+                <dd>
+                    <span>{{ agendaSala.diaMes }}</span>
+                </dd>
+                <dt><span>Dia Semana</span></dt>
+                <dd>
+                    <span>{{ agendaSala.diaSemana }}</span>
+                </dd>
+                <dt><span>Mes</span></dt>
+                <dd>
+                    <span>{{ agendaSala.mes }}</span>
+                </dd>
+                <dt><span>Sala</span></dt>
+                <dd>
+                    <div *ngIf="agendaSala.sala">
+                        <a [routerLink]="['/sala', agendaSala.sala?.id, 'view']">{{ agendaSala.sala?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/agenda-sala', agendaSala.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

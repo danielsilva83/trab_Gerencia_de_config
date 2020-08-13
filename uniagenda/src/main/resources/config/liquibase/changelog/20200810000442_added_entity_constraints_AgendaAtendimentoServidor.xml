@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity AgendaAtendimentoServidor.
+    -->
+    <changeSet id="20200810000442-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="agenda_servidor_id"
+                                 baseTableName="agenda_atendimento_servidor"
+                                 constraintName="fk_agenda_atendimento_servidor_agenda_servidor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agenda_servidor"/>
+
+        <addForeignKeyConstraint baseColumnNames="aluno_id"
+                                 baseTableName="agenda_atendimento_servidor"
+                                 constraintName="fk_agenda_atendimento_servidor_aluno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aluno"/>
+
+    </changeSet>
+</databaseChangeLog>

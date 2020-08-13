@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="agendaReservaSala">
+            <h2><span>Agenda Reserva Sala</span> {{ agendaReservaSala.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{ agendaReservaSala.status }}</span>
+                </dd>
+                <dt><span>Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.agendaSala">
+                        <a [routerLink]="['/agenda-sala', agendaReservaSala.agendaSala?.id, 'view']">{{ agendaReservaSala.agendaSala?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Aluno</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.aluno">
+                        <a [routerLink]="['/aluno', agendaReservaSala.aluno?.id, 'view']">{{ agendaReservaSala.aluno?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/agenda-reserva-sala', agendaReservaSala.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

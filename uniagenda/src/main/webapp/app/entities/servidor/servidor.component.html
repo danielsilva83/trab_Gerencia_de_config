@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span>Servidors</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-servidor" [routerLink]="['/servidor/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Servidor
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="servidors?.length === 0">
+        <span>No servidors found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="servidors && servidors.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Cod Siape</span></th>
+                    <th scope="col" ><span>Nome Servidor</span></th>
+                    <th scope="col" ><span>Cargo</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let servidor of servidors ;trackBy: trackId">
+                    <td><a [routerLink]="['/servidor', servidor.id, 'view']">{{ servidor.id }}</a></td>
+                    <td>{{ servidor.codSiape }}</td>
+                    <td>{{ servidor.nomeServidor }}</td>
+                    <td>
+                        <div *ngIf="servidor.cargo">
+                            <a [routerLink]="['/cargo', servidor.cargo?.id, 'view']" >{{ servidor.cargo?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/servidor', servidor.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/servidor', servidor.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(servidor)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

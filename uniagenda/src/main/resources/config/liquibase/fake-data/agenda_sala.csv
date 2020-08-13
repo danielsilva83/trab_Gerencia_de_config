@@ -1,0 +1,11 @@
+id;status;horario;dia_mes;dia_semana;mes
+1;Indisponivel;H9;D29;Terca_feira;Novembro
+2;Disponivel;H18H;D22;Quarta_feira;Setembro
+3;Indisponivel;H20;D31;Quinta_feira;Setembro
+4;Indisponivel;H13;D31;Quarta_feira;Agosto
+5;Indisponivel;H18H;D24;Terca_feira;Abril
+6;Indisponivel;H21;D29;Quarta_feira;Setembro
+7;Indisponivel;H9;D23;Terca_feira;Outubro
+8;Disponivel;H10;D29;Terca_feira;Marco
+9;Disponivel;H8;D23;Quinta_feira;Janeiro
+10;Disponivel;H10;D1;Terca_feira;Junho

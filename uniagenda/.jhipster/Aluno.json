@@ -1,0 +1,47 @@
+{
+  "name": "Aluno",
+  "fields": [
+    {
+      "fieldName": "raAluno",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "nomeAluno",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "periodo",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "curso",
+      "fieldType": "Curso",
+      "fieldValues": "Engenharia_Eletrica,Engenharia_Computacao,Engenharia_Eletronica,Engenharia_Mecanica,Engenharia_Controle_Automacao,Engenharia_Software,Analise_Desenvolvimento_Sistemas"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "agendaReservaSala",
+      "otherEntityRelationshipName": "aluno",
+      "relationshipName": "raAluno"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "agendaAtendimentoServidor",
+      "otherEntityRelationshipName": "aluno",
+      "relationshipName": "id"
+    }
+  ],
+  "changelogDate": "20200810000142",
+  "entityTableName": "aluno",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

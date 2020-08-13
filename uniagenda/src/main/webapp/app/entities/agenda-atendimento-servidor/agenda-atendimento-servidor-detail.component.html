@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="agendaAtendimentoServidor">
+            <h2><span>Agenda Atendimento Servidor</span> {{ agendaAtendimentoServidor.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{ agendaAtendimentoServidor.status }}</span>
+                </dd>
+                <dt><span>Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view']">{{ agendaAtendimentoServidor.agendaServidor?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Aluno</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.aluno">
+                        <a [routerLink]="['/aluno', agendaAtendimentoServidor.aluno?.id, 'view']">{{ agendaAtendimentoServidor.aluno?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/agenda-atendimento-servidor', agendaAtendimentoServidor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span>Agenda Atendimento Servidors</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-agenda-atendimento-servidor" [routerLink]="['/agenda-atendimento-servidor/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Agenda Atendimento Servidor
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="agendaAtendimentoServidors?.length === 0">
+        <span>No agendaAtendimentoServidors found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="agendaAtendimentoServidors && agendaAtendimentoServidors.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Status</span></th>
+                    <th scope="col" ><span>Agenda Servidor</span></th>
+                    <th scope="col" ><span>Aluno</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let agendaAtendimentoServidor of agendaAtendimentoServidors ;trackBy: trackId">
+                    <td><a [routerLink]="['/agenda-atendimento-servidor', agendaAtendimentoServidor.id, 'view']">{{ agendaAtendimentoServidor.id }}</a></td>
+                    <td>{{ agendaAtendimentoServidor.status }}</td>
+                    <td>
+                        <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                            <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view']" >{{ agendaAtendimentoServidor.agendaServidor?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="agendaAtendimentoServidor.aluno">
+                            <a [routerLink]="['/aluno', agendaAtendimentoServidor.aluno?.id, 'view']" >{{ agendaAtendimentoServidor.aluno?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/agenda-atendimento-servidor', agendaAtendimentoServidor.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/agenda-atendimento-servidor', agendaAtendimentoServidor.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(agendaAtendimentoServidor)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

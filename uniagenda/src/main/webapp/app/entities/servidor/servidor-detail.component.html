@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="servidor">
+            <h2><span>Servidor</span> {{ servidor.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Siape</span></dt>
+                <dd>
+                    <span>{{ servidor.codSiape }}</span>
+                </dd>
+                <dt><span>Nome Servidor</span></dt>
+                <dd>
+                    <span>{{ servidor.nomeServidor }}</span>
+                </dd>
+                <dt><span>Cargo</span></dt>
+                <dd>
+                    <div *ngIf="servidor.cargo">
+                        <a [routerLink]="['/cargo', servidor.cargo?.id, 'view']">{{ servidor.cargo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/servidor', servidor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

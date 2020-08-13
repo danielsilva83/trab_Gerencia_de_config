@@ -1,0 +1,129 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-agenda-sala-heading">Create or edit a Agenda Sala</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="Disponivel">Disponivel</option>
+                        <option value="Indisponivel">Indisponivel</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_horario">Horario</label>
+                    <select class="form-control" name="horario" formControlName="horario" id="field_horario">
+                        <option value="H8">H8</option>
+                        <option value="H9">H9</option>
+                        <option value="H10">H10</option>
+                        <option value="H11">H11</option>
+                        <option value="H12">H12</option>
+                        <option value="H13">H13</option>
+                        <option value="H14">H14</option>
+                        <option value="H15">H15</option>
+                        <option value="H16">H16</option>
+                        <option value="H17">H17</option>
+                        <option value="H18H">H18H</option>
+                        <option value="H19">H19</option>
+                        <option value="H20">H20</option>
+                        <option value="H21">H21</option>
+                        <option value="H22">H22</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_diaMes">Dia Mes</label>
+                    <select class="form-control" name="diaMes" formControlName="diaMes" id="field_diaMes">
+                        <option value="D1">D1</option>
+                        <option value="D2">D2</option>
+                        <option value="D3">D3</option>
+                        <option value="D4">D4</option>
+                        <option value="D5">D5</option>
+                        <option value="D6">D6</option>
+                        <option value="D7">D7</option>
+                        <option value="D8">D8</option>
+                        <option value="D9">D9</option>
+                        <option value="D10">D10</option>
+                        <option value="D11">D11</option>
+                        <option value="D12">D12</option>
+                        <option value="D13">D13</option>
+                        <option value="D14">D14</option>
+                        <option value="D15">D15</option>
+                        <option value="D16">D16</option>
+                        <option value="D17">D17</option>
+                        <option value="D18">D18</option>
+                        <option value="D19">D19</option>
+                        <option value="D20">D20</option>
+                        <option value="D21">D21</option>
+                        <option value="D22">D22</option>
+                        <option value="D23">D23</option>
+                        <option value="D24">D24</option>
+                        <option value="D25">D25</option>
+                        <option value="D26">D26</option>
+                        <option value="D27">D27</option>
+                        <option value="D28">D28</option>
+                        <option value="D29">D29</option>
+                        <option value="D30">D30</option>
+                        <option value="D31">D31</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_diaSemana">Dia Semana</label>
+                    <select class="form-control" name="diaSemana" formControlName="diaSemana" id="field_diaSemana">
+                        <option value="Segunda_feira">Segunda_feira</option>
+                        <option value="Terca_feira">Terca_feira</option>
+                        <option value="Quarta_feira">Quarta_feira</option>
+                        <option value="Quinta_feira">Quinta_feira</option>
+                        <option value="Sexta_feira">Sexta_feira</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mes">Mes</label>
+                    <select class="form-control" name="mes" formControlName="mes" id="field_mes">
+                        <option value="Janeiro">Janeiro</option>
+                        <option value="Fevereiro">Fevereiro</option>
+                        <option value="Marco">Marco</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Maio">Maio</option>
+                        <option value="Junho">Junho</option>
+                        <option value="Julho">Julho</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Setembro">Setembro</option>
+                        <option value="Outubro">Outubro</option>
+                        <option value="Novembro">Novembro</option>
+                        <option value="Dezembro">Dezembro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sala">Sala</label>
+                    <select class="form-control" id="field_sala" name="sala" formControlName="sala">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="salaOption.id === editForm.get('sala')!.value?.id ? editForm.get('sala')!.value : salaOption" *ngFor="let salaOption of salas; trackBy: trackById">{{ salaOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

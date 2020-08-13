@@ -1,0 +1,39 @@
+{
+  "name": "Servidor",
+  "fields": [
+    {
+      "fieldName": "codSiape",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "nomeServidor",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "agendaServidor",
+      "otherEntityRelationshipName": "servidor",
+      "relationshipName": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cargo",
+      "otherEntityRelationshipName": "nomeCargo",
+      "relationshipName": "cargo",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200810000242",
+  "entityTableName": "servidor",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
