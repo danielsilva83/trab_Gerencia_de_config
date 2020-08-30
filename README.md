@@ -1,9 +1,9 @@
 # -Agendamentos
 
-agenda
+Abrir projeto UniAgenda
 passo 0 - Fazer o Clone deste repositório ou fazer o donwload do arquivo .ZIP do projeto, clicando em Code download zip.
 
-Antes de poder construir este projeto, você deve instalar e configurar as seguintes dependências em sua máquina:
+Antes de realizar o build deste projeto, você deve instalar e configurar as seguintes dependências em sua máquina:
 1) Instalar o Java JDK-8u261  encontrado https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
 1.1) Configurar a variavel java_home nas variaveis de ambiente do windows: https://confluence.atlassian.com/confbr1/configurando-a-variavel-java_home-no-windows-933709538.html
 
