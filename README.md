@@ -1,7 +1,7 @@
 # -Agendamentos
 
 agenda
-
+passo 0 - Fazer o Clone deste repositório ou fazer o donwload do arquivo .ZIP do projeto, clicando em Code download zip.
 
 Antes de poder construir este projeto, você deve instalar e configurar as seguintes dependências em sua máquina:
 1) Instalar o Java JDK-8u261  encontrado https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html
@@ -25,135 +25,127 @@ Você também pode executar o npm update e o npm install para gerenciar dependê
 para fazer o login use - usuario: admin e senha: admin
 
 agenda
-This application was generated using JHipster 6.10.1, you can find documentation and help at https://www.jhipster.tech/documentation-archive/v6.10.1.
+Esta aplicação foi gerada utilizando JHipster 6.10.1, pode encontrar documentação e ajuda em https://www.jhipster.tech/documentation-archive/v6.10.1.
 
-Development
-Before you can build this project, you must install and configure the following dependencies on your machine:
+Desenvolvimento em
+Antes de poder construir este projecto, deve instalar e configurar as seguintes dependências na sua máquina:
 
-Node.js: We use Node to run a development web server and build the project. Depending on your system, you can install Node either from source or as a pre-packaged bundle.
-After installing Node, you should be able to run the following command to install development tools. You will only need to run this command when dependencies change in package.json.
+Node.js: Utilizamos o Node para executar um servidor web de desenvolvimento e construir o projecto. Dependendo do seu sistema, pode instalar o Node a partir da fonte ou como um pacote pré-pacotado.
+Depois de instalar Node, deverá poder executar o seguinte comando para instalar ferramentas de desenvolvimento. Só precisará de executar este comando quando as dependências mudarem em package.json.
 
-npm install
-We use npm scripts and Webpack as our build system.
+npm instalar
+Utilizamos npm scripts e Webpack como o nosso sistema de construção.
 
-Run the following commands in two separate terminals to create a blissful development experience where your browser auto-refreshes when files change on your hard drive.
+Execute os seguintes comandos em dois terminais separados para criar uma experiência de desenvolvimento feliz, onde o seu navegador faz o auto-refresco quando os ficheiros mudam no seu disco rígido.
 
 
 ./mvnw
 
 
-npm start
-Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by specifying a newer version in package.json. You can also run npm update and npm install to manage dependencies. Add the help flag on any command to see how you can use it. For example, npm help update.
+npm início
+Npm é também utilizado para gerir as dependências CSS e JavaScript utilizadas nesta aplicação. Pode actualizar as dependências especificando uma versão mais recente em package.json. Pode também executar npm update e npm install para gerir as dependências. Adicione a bandeira de ajuda em qualquer comando para ver como a pode utilizar. Por exemplo, npm help update.
 
-The npm run command will list all of the scripts available to run for this project.
+O comando npm run listará todos os scripts disponíveis para correr para este projecto.
 
-PWA Support
-JHipster ships with PWA (Progressive Web App) support, and it's turned off by default. One of the main components of a PWA is a service worker.
+Apoio PWA
+JHipster envia com suporte de PWA (Progressive Web App), e está desligado por defeito. Um dos principais componentes de um AWP é um trabalhador de serviços.
 
-The service worker initialization code is commented out by default. To enable it, uncomment the following code in src/main/webapp/index.html:
+O código de inicialização do trabalhador de serviços é comentado por defeito. Para o activar, descomente o seguinte código em src/main/webapp/index.html:
 
 <script>
-  if ('serviceWorker' in navigator) {
+  se ('serviceWorker' em navigator) {
     navigator.serviceWorker.register('./service-worker.js').then(function () {
-      console.log('Service Worker Registered');
+      console.log('Serviço Trabalhador Registado');
     });
   }
 </script>
-Note: Workbox powers JHipster's service worker. It dynamically generates the service-worker.js file.
+Nota: A Workbox dá poder ao trabalhador de serviço de JHipster. Gera dinamicamente o ficheiro service-worker.js.
 
-Managing dependencies
-For example, to add Leaflet library as a runtime dependency of your application, you would run following command:
+Gestão de dependências
+Por exemplo, para adicionar a biblioteca de Folhetos como uma dependência de tempo de execução da sua aplicação, correria seguindo o comando:
 
-npm install --save --save-exact leaflet
-To benefit from TypeScript type definitions from DefinitelyTyped repository in development, you would run following command:
+npm install --save --save folheto exacto
+Para beneficiar das definições de tipo TypeScript do repositório DefinitivelyTyped em desenvolvimento, correria seguindo o comando:
 
 npm install --save-dev --save-exact @types/leaflet
-Then you would import the JS and CSS files specified in library's installation instructions so that Webpack knows about them: Edit src/main/webapp/app/vendor.ts file:
+Depois importaria os ficheiros JS e CSS especificados nas instruções de instalação da biblioteca para que o Webpack os conheça: Editar ficheiro src/main/webapp/app/vendor.ts:
 
-import 'leaflet/dist/leaflet.js';
-Edit src/main/webapp/content/scss/vendor.scss file:
+importar 'leaflet/dist/leaflet.js';
+Editar ficheiro src/main/webapp/content/scss/vendor.scss:
 
-@import '~leaflet/dist/leaflet.css';
-Note: There are still a few other things remaining to do for Leaflet that we won't detail here.
+@importar '~folheto/dist/leaflet.css';
+Nota: Há ainda algumas outras coisas a fazer para o Leaflet que não iremos detalhar aqui.
 
-For further instructions on how to develop with JHipster, have a look at Using JHipster in development.
+Para mais instruções sobre como desenvolver com JHipster, dê uma vista de olhos à Utilização de JHipster em desenvolvimento.
 
-Using Angular CLI
-You can also use Angular CLI to generate some custom client code.
+Utilização da CLI Angular
+Também pode usar a CLI Angular para gerar algum código de cliente personalizado.
 
-For example, the following command:
+Por exemplo, o seguinte comando:
 
-ng generate component my-component
-will generate few files:
+ng gerar componente meu-componente
+irá gerar poucos ficheiros:
 
-create src/main/webapp/app/my-component/my-component.component.html
-create src/main/webapp/app/my-component/my-component.component.ts
-update src/main/webapp/app/app.module.ts
-Building for production
-Packaging as jar
-To build the final jar and optimize the agenda application for production, run:
-
-
-./mvnw -Pprod clean verify
+criar src/main/webapp/app/meu-componente/meucomponente.html
+criar src/main/webapp/app/meu-componente/meucomponente.ts
+actualizar src/main/webapp/app/app.module.ts
+Edifício para produção
+Embalagem como frasco
+Para construir o frasco final e optimizar a aplicação da agenda para a produção, executar:
 
 
-This will concatenate and minify the client CSS and JavaScript files. It will also modify index.html so it references these new files. To ensure everything worked, run:
+./mvnw -Pprod verificar limpo
+
+
+Isto irá concatenar e minificar os ficheiros CSS e JavaScript do cliente. Modificará também index.html para que faça referência a estes novos ficheiros. Para garantir que tudo funcionou, execute:
 
 
 java -jar target/*.jar
 
 
-Then navigate to http://localhost:8080 in your browser.
+Depois navegue para http://localhost:8080 no seu navegador.
 
-Refer to Using JHipster in production for more details.
+Consulte Utilizar JHipster em produção para mais detalhes.
 
-Packaging as war
-To package your application as a war in order to deploy it to an application server, run:
-
-
-./mvnw -Pprod,war clean verify
+Embalagem como guerra
+Para empacotar a sua aplicação como uma guerra a fim de a implantar num servidor de aplicação, execute:
 
 
-Testing
-To launch your application's tests, run:
+./mvnw -Pprod,war clean check
 
-./mvnw verify
-Client tests
-Unit tests are run by Jest and written with Jasmine. They're located in src/test/javascript/ and can be run with:
 
-npm test
-For more information, refer to the Running tests page.
+Testes
+Para iniciar os testes da sua candidatura, execute:
 
-Code quality
-Sonar is used to analyse code quality. You can start a local Sonar server (accessible on http://localhost:9001) with:
+./mvnw verificar
+Testes de clientes
+Os testes unitários são realizados por Jest e escritos com Jasmine. Estão localizados em src/test/javascript/ e podem ser executados com:
+
+npm teste
+Para mais informações, consultar a página Testes em curso.
+
+Qualidade do código
+O sonar é utilizado para analisar a qualidade do código. Pode iniciar um servidor Sonar local (acessível em http://localhost:9001) com:
 
 docker-compose -f src/main/docker/sonar.yml up -d
-You can run a Sonar analysis with using the sonar-scanner or by using the maven plugin.
+Pode efectuar uma análise Sonar com a utilização do sonar-scanner ou utilizando o plugin maven.
 
-Then, run a Sonar analysis:
+Em seguida, executar uma análise por sonar:
 
 ./mvnw -Pprod clean verify sonar:sonar
-If you need to re-run the Sonar phase, please be sure to specify at least the initialize phase since Sonar properties are loaded from the sonar-project.properties file.
+Se precisar de executar novamente a fase Sonar, certifique-se de especificar pelo menos a fase de inicialização, uma vez que as propriedades do Sonar são carregadas a partir do ficheiro sonar-projecto.propriedades.
 
-./mvnw initialize sonar:sonar
-For more information, refer to the Code quality page.
+./mvnw inicializar sonar:sonar
+Para mais informações, consultar a página sobre a qualidade do Código.
 
-Using Docker to simplify development (optional)
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the src/main/docker folder to launch required third party services.
+Utilização do Docker para simplificar o desenvolvimento (opcional)
+Pode usar o Docker para melhorar a sua experiência de desenvolvimento JHipster. Uma série de configurações de docker-compose estão disponíveis na pasta src/main/docker para lançar os serviços de terceiros necessários.
 
-For example, to start a mysql database in a docker container, run:
+Por exemplo, para iniciar uma base de dados mysql num contentor de doca, execute:
 
 docker-compose -f src/main/docker/mysql.yml up -d
-To stop it and remove the container, run:
+Para o parar e remover o recipiente, correr:
 
-docker-compose -f src/main/docker/mysql.yml down
-You can also fully dockerize your application and all the services that it depends on. To achieve this, first build a docker image of your app by running:
+docker-compose -f src/main/docker/mysql.ym
 
-./mvnw -Pprod verify jib:dockerBuild
-Then run:
-
-docker-compose -f src/main/docker/app.yml up -d
-For more information refer to Using Docker and Docker-Compose, this page also contains information on the docker-compose sub-generator (jhipster docker-compose), which is able to generate docker configurations for one or several JHipster applications.
-
-Continuous Integration (optional)
-To configure CI for your project, run the ci-cd sub-generator (jhipster ci-cd), this will let you generate configuration files for a number of Continuous Integration systems. Consult the Setting up Continuous Integration page for more information.
+Traduzido com a versão gratuita do tradutor - www.DeepL.com/Translator
