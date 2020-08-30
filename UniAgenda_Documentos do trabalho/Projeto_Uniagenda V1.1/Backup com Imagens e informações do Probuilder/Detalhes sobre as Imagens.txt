@@ -1,0 +1,3 @@
+Imagens de backup do programa Probuilder preenchidos.
+Enviamos as imagens, pois existe a possibilidade do backup não restaurar todas as informações.
+obs: Durante nosso trabalho, este bug aconteceu varias vezes e tivemos que refazer todo o processo.
